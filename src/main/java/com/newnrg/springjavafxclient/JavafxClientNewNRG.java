@@ -30,7 +30,7 @@ public class JavafxClientNewNRG extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FxWeaver fxWeaver = context.getBean(FxWeaver.class);
-        Parent root = fxWeaver.loadView(FrameController.class);
+        Parent root = fxWeaver.loadView(AuthorizationController.class);
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
