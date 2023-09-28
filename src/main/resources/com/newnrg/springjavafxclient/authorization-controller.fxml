@@ -21,11 +21,9 @@
       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-       <Button onAction="#logIn" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">Log in</Button>
-      <PasswordField minHeight="10.0" minWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label text="Email" />
-      <Label text="Password" GridPane.rowIndex="1" />
-      <TextField GridPane.columnIndex="1" />
-      <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="131.0" text="Registration" GridPane.rowIndex="2" />
+       <Button onAction="#login" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">Log in</Button>
+      <PasswordField fx:id="passwordText" minHeight="10.0" minWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="loginText" GridPane.columnIndex="1" />
+      <Button onAction="#registration" prefHeight="0.0" prefWidth="131.0" text="Registration" GridPane.rowIndex="2" />
    </children>
 </GridPane>
