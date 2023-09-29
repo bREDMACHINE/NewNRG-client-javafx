@@ -33,6 +33,7 @@ public class JavafxClientNewNRG extends Application {
         Parent root = fxWeaver.loadView(AuthorizationController.class);
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Авторизация");
         stage.show();
     }
 }
