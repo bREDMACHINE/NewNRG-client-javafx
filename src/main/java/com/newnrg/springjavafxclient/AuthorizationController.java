@@ -32,8 +32,4 @@ public class AuthorizationController {
     @FXML
     public void registration(ActionEvent actionEvent) {
     }
-
-    public User getUser() {
-        return user;
-    }
 }

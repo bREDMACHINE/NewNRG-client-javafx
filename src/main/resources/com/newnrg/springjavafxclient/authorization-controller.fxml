@@ -6,25 +6,71 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<VBox fillWidth="false" prefHeight="341.0" prefWidth="353.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1"
+<VBox alignment="CENTER"
+      fillWidth="false"
+      prefHeight="407.0"
+      prefWidth="375.0"
+      spacing="20.0"
+      xmlns="http://javafx.com/javafx/20.0.1"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.newnrg.springjavafxclient.AuthorizationController">
+
    <children>
-      <Label text="Имя пользователя:" />
-      <TextField fx:id="loginText" prefHeight="36.0" prefWidth="313.0" />
-      <Label text="Пароль" />
-      <PasswordField fx:id="passwordText" minHeight="10.0" minWidth="100.0" prefHeight="37.0" prefWidth="333.0" />
-       <Button onAction="#login" prefHeight="41.0" prefWidth="333.0" text="Войти">Log in</Button>
-      <Label alignment="CENTER" prefHeight="17.0" prefWidth="342.0" text="или" />
-      <Button onAction="#registration" prefHeight="37.0" prefWidth="313.0" text="Зарегистрироваться">
+      <Label alignment="CENTER"
+             contentDisplay="CENTER"
+             prefHeight="37.0"
+             prefWidth="375.0"
+             text="АВТОРИЗАЦИЯ">
+
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+      <Label prefWidth="375.0"
+             text="Имя пользователя:" />
+
+      <TextField fx:id="loginText"
+                 prefHeight="37.0"
+                 prefWidth="375.0" />
+
+      <Label prefWidth="375.0"
+             text="Пароль:" />
+
+      <PasswordField fx:id="passwordText"
+                     prefHeight="37.0"
+                     prefWidth="375.0" />
+
+      <Button onAction="#login"
+              prefHeight="37.0"
+              prefWidth="375.0"
+              text="Войти">Log in</Button>
+
+      <Label alignment="CENTER"
+             prefHeight="17.0"
+             prefWidth="375.0"
+             text="или" />
+
+      <Button onAction="#registration"
+              prefHeight="37.0"
+              prefWidth="375.0"
+              text="Зарегистрироваться">
+
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </Button>
+
    </children>
+
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+      <Insets bottom="20.0"
+              left="20.0"
+              right="20.0"
+              top="10.0" />
+
    </padding>
+
 </VBox>
