@@ -15,6 +15,9 @@ public class JavafxClientNewNRG extends Application {
 
     private ConfigurableApplicationContext context;
     private boolean isUserLoggedIn = false;
+    private FxWeaver fxWeaver = context.getBean(FxWeaver.class);
+    private Stage stageMain;
+    private Stage stageAuthorization;
 
     @Override
     public void init() {
@@ -31,21 +34,27 @@ public class JavafxClientNewNRG extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
-        FxWeaver fxWeaver = context.getBean(FxWeaver.class);
+    public void start(Stage stageMain) throws Exception {
+        this.stageMain = stageMain;
+        initMainWindow();
+        initAuthorizationWindow();
+    }
+
+    private void initMainWindow() {
         Parent root = fxWeaver.loadView(MainController.class);
         Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("НОВАЯ ЭНЕРГИЯ");
-        stage.getIcons().add(new Image("file:icon.png"));
-        stage.show();
-        if (!isUserLoggedIn) {
-            Stage window = new Stage();
-            window.initModality(Modality.APPLICATION_MODAL);
-            Parent parent = fxWeaver.loadView(AuthorizationController.class);
-            Scene scene2 = new Scene(parent);
-            stage.setScene(scene2);
-            stage.show();
-        }
+        stageMain.setScene(scene);
+        stageMain.setTitle("НОВАЯ ЭНЕРГИЯ");
+        stageMain.getIcons().add(new Image("file:icon.png"));
+        stageMain.show();
+    }
+
+    private void initAuthorizationWindow() {
+        stageAuthorization = new Stage();
+        stageAuthorization.initModality(Modality.APPLICATION_MODAL);
+        Parent root = fxWeaver.loadView(AuthorizationController.class);
+        Scene scene = new Scene(root);
+        stageAuthorization.setScene(scene);
+        stageAuthorization.show();
     }
 }
