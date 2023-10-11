@@ -1,32 +1,31 @@
 package com.newnrg.springjavafxclient;
 
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import net.rgielen.fxweaver.core.FxControllerAndView;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 @Component
 @FxmlView("main-controller.fxml")
-public class MainController implements Initializable {
+public class MainController {
 
+    private final FxControllerAndView<AuthorizationController, VBox> authorizationController;
 
-    private boolean isUserLoggedIn = false;
+    @FXML
+    public Button openDialogButton;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        Stage stageAuthorization = new Stage();
-//        stageAuthorization.initModality(Modality.APPLICATION_MODAL);
-//        FXMLLoader loader = new FXMLLoader();
-//        Parent root = fxWeaver.loadView(AuthorizationController.class);
-//        Scene scene = new Scene(root);
-//        stageAuthorization.setScene(scene);
-//        stageAuthorization.show();
+    public MainController(FxControllerAndView<AuthorizationController, VBox> authorizationController) {
+        this.authorizationController = authorizationController;
     }
+
+    @FXML
+    public void initialize() {
+        openDialogButton.setOnAction(
+                actionEvent -> authorizationController.getController().show()
+        );
+    }
+
 }
