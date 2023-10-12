@@ -15,15 +15,16 @@ public class MainController {
     private final FxControllerAndView<AuthorizationController, VBox> authorizationController;
 
     @FXML
-    public Button openDialogButton;
+    public Button openAuthorButton;
 
+    @Autowired
     public MainController(FxControllerAndView<AuthorizationController, VBox> authorizationController) {
         this.authorizationController = authorizationController;
     }
 
     @FXML
     public void initialize() {
-        openDialogButton.setOnAction(
+        openAuthorButton.setOnAction(
                 actionEvent -> authorizationController.getController().show()
         );
     }

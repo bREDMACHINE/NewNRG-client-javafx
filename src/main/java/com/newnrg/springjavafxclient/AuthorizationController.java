@@ -2,11 +2,13 @@ package com.newnrg.springjavafxclient;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,11 @@ public class AuthorizationController {
     @FXML
     private PasswordField passwordText;
     private Stage stage;
+//    @FXML
+//    private Button closeButton;
     @FXML
-    private Button closeButton;
-    @FXML
-    private VBox dialog;
+    private VBox window;
+    private User user;
 
     @Autowired
     public AuthorizationController(AuthorizationService authorizationService) {
@@ -44,11 +47,11 @@ public class AuthorizationController {
     @FXML
     public void initialize() {
         this.stage = new Stage();
-        stage.setScene(new Scene(dialog));
-
-        closeButton.setOnAction(
-                actionEvent -> stage.close()
-        );
+        stage.setScene(new Scene(window));
+        stage.initModality(Modality.WINDOW_MODAL);
+//        closeButton.setOnAction(
+//                actionEvent -> stage.close()
+//        );
     }
 
     public void show() {
