@@ -12,10 +12,9 @@ public class JavafxClientNewNRG extends Application {
 
     @Override
     public void init() {
-        String[] args = getParameters().getRaw().toArray(new String[0]);
         this.context = new SpringApplicationBuilder()
                 .sources(SpringJavafxClientApplication.class)
-                .run(args);
+                .run(getParameters().getRaw().toArray(new String[0]));
     }
 
     @Override
@@ -25,7 +24,7 @@ public class JavafxClientNewNRG extends Application {
     }
 
     @Override
-    public void start(Stage stageMain) throws Exception {
-        context.publishEvent(new StageReadyEvent(stageMain));
+    public void start(Stage stage) throws Exception {
+        context.publishEvent(new StageReadyEvent(stage));
     }
 }

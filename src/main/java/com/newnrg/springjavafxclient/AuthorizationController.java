@@ -2,11 +2,10 @@ package com.newnrg.springjavafxclient;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -24,8 +23,6 @@ public class AuthorizationController {
     @FXML
     private PasswordField passwordText;
     private Stage stage;
-//    @FXML
-//    private Button closeButton;
     @FXML
     private VBox window;
     private User user;
@@ -48,10 +45,9 @@ public class AuthorizationController {
     public void initialize() {
         this.stage = new Stage();
         stage.setScene(new Scene(window));
-        stage.initModality(Modality.WINDOW_MODAL);
-//        closeButton.setOnAction(
-//                actionEvent -> stage.close()
-//        );
+        stage.setTitle("НОВАЯ ЭНЕРГИЯ");
+        stage.getIcons().add(new Image("file:icon.png"));
+        stage.initModality(Modality.APPLICATION_MODAL);
     }
 
     public void show() {
