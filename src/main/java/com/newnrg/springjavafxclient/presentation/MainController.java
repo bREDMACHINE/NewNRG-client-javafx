@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.presentation;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

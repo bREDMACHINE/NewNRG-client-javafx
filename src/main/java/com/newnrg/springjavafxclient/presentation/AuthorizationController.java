@@ -1,5 +1,8 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.presentation;
 
+import com.newnrg.springjavafxclient.domain.usecases.AuthorizationService;
+import com.newnrg.springjavafxclient.data.User;
+import com.newnrg.springjavafxclient.domain.models.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;

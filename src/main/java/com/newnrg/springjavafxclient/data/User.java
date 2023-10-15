@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.data;
 
 import lombok.Builder;
 import lombok.Getter;

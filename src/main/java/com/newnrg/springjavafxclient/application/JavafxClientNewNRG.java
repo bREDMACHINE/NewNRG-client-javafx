@@ -1,5 +1,6 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.application;
 
+import com.newnrg.springjavafxclient.SpringJavafxClientApplication;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;

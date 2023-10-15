@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.data;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

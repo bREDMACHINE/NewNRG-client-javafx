@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.domain.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

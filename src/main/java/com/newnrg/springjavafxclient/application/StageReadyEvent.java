@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.application;
 
 import javafx.stage.Stage;
 import org.springframework.context.ApplicationEvent;

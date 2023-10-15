@@ -1,5 +1,6 @@
-package com.newnrg.springjavafxclient;
+package com.newnrg.springjavafxclient.application;
 
+import com.newnrg.springjavafxclient.presentation.MainController;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
