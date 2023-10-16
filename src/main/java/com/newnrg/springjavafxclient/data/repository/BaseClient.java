@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient.domain.usecases;
+package com.newnrg.springjavafxclient.data.repository;
 
 import org.springframework.http.*;
 import org.springframework.lang.Nullable;
