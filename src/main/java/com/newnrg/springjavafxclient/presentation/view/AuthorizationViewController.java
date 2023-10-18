@@ -1,8 +1,8 @@
-package com.newnrg.springjavafxclient.presentation;
+package com.newnrg.springjavafxclient.presentation.view;
 
-import com.newnrg.springjavafxclient.data.repository.AuthorizationService;
-import com.newnrg.springjavafxclient.data.storage.models.User;
-import com.newnrg.springjavafxclient.domain.models.UserDto;
+import com.newnrg.springjavafxclient.presentation.model.AuthorizationService;
+import com.newnrg.springjavafxclient.presentation.model.User;
+import com.newnrg.springjavafxclient.presentation.model.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @FxmlView("authorization-controller.fxml")
-public class AuthorizationController {
+public class AuthorizationViewController {
 
     private AuthorizationService authorizationService;
     @FXML
@@ -28,16 +28,15 @@ public class AuthorizationController {
     private Stage stage;
     @FXML
     private VBox window;
-    private User user;
 
     @Autowired
-    public AuthorizationController(AuthorizationService authorizationService) {
+    public AuthorizationViewController(AuthorizationService authorizationService) {
         this.authorizationService = authorizationService;
     }
 
     @FXML
     public void login(ActionEvent actionEvent) {
-        user = authorizationService.authorization(new UserDto(loginText.getText(), passwordText.getText()));
+        User user = authorizationService.authorization(new UserDto(loginText.getText(), passwordText.getText()));
     }
 
     @FXML

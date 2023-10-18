@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient.data.repository;
+package com.newnrg.springjavafxclient.presentation.model;
 
 import org.springframework.http.*;
 import org.springframework.lang.Nullable;

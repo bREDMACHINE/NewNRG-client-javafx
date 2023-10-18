@@ -1,8 +1,5 @@
-package com.newnrg.springjavafxclient.data.repository;
+package com.newnrg.springjavafxclient.presentation.model;
 
-import com.newnrg.springjavafxclient.data.storage.models.User;
-import com.newnrg.springjavafxclient.data.storage.models.UserMapper;
-import com.newnrg.springjavafxclient.domain.models.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

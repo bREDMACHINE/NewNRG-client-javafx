@@ -1,9 +1,9 @@
-package com.newnrg.springjavafxclient.data.storage.sharedprefs;
+package com.newnrg.springjavafxclient.presentation.model.sharedprefs;
 
 import java.util.prefs.Preferences;
-import com.newnrg.springjavafxclient.data.storage.UserStorage;
-import com.newnrg.springjavafxclient.data.storage.models.Role;
-import com.newnrg.springjavafxclient.data.storage.models.User;
+import com.newnrg.springjavafxclient.presentation.model.UserStorage;
+import com.newnrg.springjavafxclient.presentation.model.Role;
+import com.newnrg.springjavafxclient.presentation.model.User;
 import org.springframework.stereotype.Component;
 
 @Component

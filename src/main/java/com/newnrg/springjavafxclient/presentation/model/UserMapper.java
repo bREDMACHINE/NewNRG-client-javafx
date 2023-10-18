@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient.data.storage.models;
+package com.newnrg.springjavafxclient.presentation.model;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

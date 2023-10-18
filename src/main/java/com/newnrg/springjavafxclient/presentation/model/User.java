@@ -1,4 +1,4 @@
-package com.newnrg.springjavafxclient.data.storage.models;
+package com.newnrg.springjavafxclient.presentation.model;
 
 import lombok.Builder;
 import lombok.Getter;
