@@ -1,5 +1,6 @@
-package com.newnrg.springjavafxclient.presentation.view;
+package com.newnrg.springjavafxclient.presentation.main;
 
+import com.newnrg.springjavafxclient.presentation.authorization.AuthorizationView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -12,13 +13,13 @@ import org.springframework.stereotype.Component;
 @FxmlView("main-controller.fxml")
 public class MainViewController {
 
-    private final FxControllerAndView<AuthorizationViewController, VBox> authorizationController;
+    private final FxControllerAndView<AuthorizationView, VBox> authorizationController;
 
     @FXML
     public Button openAuthorButton;
 
     @Autowired
-    public MainViewController(FxControllerAndView<AuthorizationViewController, VBox> authorizationController) {
+    public MainViewController(FxControllerAndView<AuthorizationView, VBox> authorizationController) {
         this.authorizationController = authorizationController;
     }
 

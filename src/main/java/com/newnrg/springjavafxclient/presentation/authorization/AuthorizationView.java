@@ -1,8 +1,5 @@
-package com.newnrg.springjavafxclient.presentation.view;
+package com.newnrg.springjavafxclient.presentation.authorization;
 
-import com.newnrg.springjavafxclient.presentation.model.AuthorizationService;
-import com.newnrg.springjavafxclient.presentation.model.User;
-import com.newnrg.springjavafxclient.presentation.model.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -18,9 +15,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 @FxmlView("authorization-controller.fxml")
-public class AuthorizationViewController {
+public class AuthorizationView implements AuthorizationContract.View {
 
-    private AuthorizationService authorizationService;
+    private AuthorizationContract.Presenter presenter;
     @FXML
     private TextField loginText;
     @FXML
@@ -30,21 +27,22 @@ public class AuthorizationViewController {
     private VBox window;
 
     @Autowired
-    public AuthorizationViewController(AuthorizationService authorizationService) {
-        this.authorizationService = authorizationService;
+    public AuthorizationView() {
     }
 
     @FXML
     public void login(ActionEvent actionEvent) {
-        User user = authorizationService.authorization(new UserDto(loginText.getText(), passwordText.getText()));
+        presenter.login(loginText.getText(), passwordText.getText());
     }
 
     @FXML
     public void registration(ActionEvent actionEvent) {
+        presenter.registration();
     }
 
     @FXML
     public void initialize() {
+        presenter = new AuthorizationPresenter(this);
         this.stage = new Stage();
         stage.setScene(new Scene(window));
         stage.setTitle("НОВАЯ ЭНЕРГИЯ");

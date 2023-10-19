@@ -1,5 +1,6 @@
 package com.newnrg.springjavafxclient.presentation.model;
 
+import com.newnrg.springjavafxclient.presentation.authorization.AuthorizationContract;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,7 +12,7 @@ import org.springframework.web.util.DefaultUriBuilderFactory;
 
 @Service
 @Slf4j
-public class AuthorizationService extends BaseClient {
+public class AuthorizationService extends BaseClient implements AuthorizationContract.Model {
 
     @Autowired
     public AuthorizationService(@Value("${newnrg-server.url}") String serverUrl, RestTemplateBuilder builder) {

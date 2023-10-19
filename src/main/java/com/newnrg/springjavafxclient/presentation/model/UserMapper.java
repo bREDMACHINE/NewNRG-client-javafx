@@ -11,8 +11,8 @@ public class UserMapper {
         JsonObject jsonObject = JsonParser.parseReader(new StringReader(object.toString()))
                 .getAsJsonObject();
         return User.builder()
-                .login(login)
-                .role(jsonObject.get("Role").getAsString())
+                .userName(login)
+                .userRole(Role.valueOf(jsonObject.get("Role").getAsString()))
                 .userId(jsonObject.get("Token").getAsString())
                 .build();
     }
