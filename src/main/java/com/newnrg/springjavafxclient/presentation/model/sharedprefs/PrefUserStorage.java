@@ -1,13 +1,14 @@
 package com.newnrg.springjavafxclient.presentation.model.sharedprefs;
 
 import java.util.prefs.Preferences;
-import com.newnrg.springjavafxclient.presentation.model.UserStorage;
+
+import com.newnrg.springjavafxclient.presentation.authorization.AuthorizationContract;
 import com.newnrg.springjavafxclient.presentation.model.Role;
 import com.newnrg.springjavafxclient.presentation.model.User;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PrefUserStorage implements UserStorage {
+public class PrefUserStorage implements AuthorizationContract.UserStorage {
 
     private final Preferences pref =  Preferences.userRoot().node(getClass().getName());
     private final String KEY_USER_NAME = "userName";
@@ -17,9 +18,9 @@ public class PrefUserStorage implements UserStorage {
     @Override
     public User getUser() {
         String userName = pref.get(KEY_USER_NAME, "null");
-        long userId = pref.getLong(KEY_USER_ID, -1L);
+        String userId = pref.get(KEY_USER_ID, "null");
         String userRole = pref.get(KEY_USER_ROLE, "null");
-        if (userName.equals("null") || userId == -1 || userRole.equals("null")) {
+        if (userName.equals("null") || userId.equals("null") || userRole.equals("null")) {
             return null;
         }
         return User.builder()
@@ -32,7 +33,7 @@ public class PrefUserStorage implements UserStorage {
     @Override
     public Boolean saveUser(User user) {
         pref.put(KEY_USER_NAME, user.getUserName());
-        pref.putLong(KEY_USER_ID, user.getUserId());
+        pref.put(KEY_USER_ID, user.getUserId());
         pref.put(KEY_USER_ROLE, user.getUserRole().name());
         return true;
     }

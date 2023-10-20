@@ -26,9 +26,9 @@ public class AuthorizationView implements AuthorizationContract.View {
     @FXML
     private VBox window;
 
-    @Autowired
-    public AuthorizationView() {
-    }
+//    @Autowired
+//    public AuthorizationView() {
+//    }
 
     @FXML
     public void login(ActionEvent actionEvent) {
@@ -42,7 +42,6 @@ public class AuthorizationView implements AuthorizationContract.View {
 
     @FXML
     public void initialize() {
-        presenter = new AuthorizationPresenter(this);
         this.stage = new Stage();
         stage.setScene(new Scene(window));
         stage.setTitle("НОВАЯ ЭНЕРГИЯ");
@@ -52,5 +51,9 @@ public class AuthorizationView implements AuthorizationContract.View {
 
     public void show() {
         stage.show();
+    }
+
+    public void close() {
+        stage.close();
     }
 }

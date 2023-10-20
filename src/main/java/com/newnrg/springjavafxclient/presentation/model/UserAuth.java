@@ -8,11 +8,11 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @AllArgsConstructor
-public class UserDto {
+public class UserAuth {
 
     @NotBlank
     @Email
-    private String login;
+    private String userName;
     @NotBlank
-    private String password;
+    private String userPassword;
 }

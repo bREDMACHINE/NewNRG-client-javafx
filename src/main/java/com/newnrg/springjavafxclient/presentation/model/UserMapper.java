@@ -7,11 +7,11 @@ import java.io.StringReader;
 
 public class UserMapper {
 
-    public static User toUser(Object object, String login) {
+    public static User toUser(Object object, String userName) {
         JsonObject jsonObject = JsonParser.parseReader(new StringReader(object.toString()))
                 .getAsJsonObject();
         return User.builder()
-                .userName(login)
+                .userName(userName)
                 .userRole(Role.valueOf(jsonObject.get("Role").getAsString()))
                 .userId(jsonObject.get("Token").getAsString())
                 .build();

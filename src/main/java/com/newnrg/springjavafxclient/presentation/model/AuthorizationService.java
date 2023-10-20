@@ -24,12 +24,12 @@ public class AuthorizationService extends BaseClient implements AuthorizationCon
         );
     }
 
-    public User authorization(UserDto userDto) {
-        log.info("Authorization user {}",  userDto);
-        ResponseEntity<Object> response = post("/authorization", null, userDto);
+    public User authorization(UserAuth userAuth) {
+        log.info("Authorization user {}",  userAuth);
+        ResponseEntity<Object> response = post("/authorization", null, userAuth);
         if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
             log.info("Result {}", response.getBody().toString());
-            return UserMapper.toUser(response.getBody(), userDto.getLogin());
+            return UserMapper.toUser(response.getBody(), userAuth.getUserName());
         } else {
 
             //Error
