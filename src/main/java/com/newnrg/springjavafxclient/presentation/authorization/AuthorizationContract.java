@@ -16,12 +16,12 @@ public interface AuthorizationContract {
     }
 
     interface Presenter {
-        void login(String userName, String password);
+        void authorization(String userName, String password);
 
         void registration();
     }
 
-    interface UserStorage {
+    interface Memory {
 
         User getUser();
 

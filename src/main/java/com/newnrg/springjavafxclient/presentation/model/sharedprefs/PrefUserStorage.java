@@ -8,7 +8,7 @@ import com.newnrg.springjavafxclient.presentation.model.User;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PrefUserStorage implements AuthorizationContract.UserStorage {
+public class PrefUserStorage implements AuthorizationContract.Memory {
 
     private final Preferences pref =  Preferences.userRoot().node(getClass().getName());
     private final String KEY_USER_NAME = "userName";

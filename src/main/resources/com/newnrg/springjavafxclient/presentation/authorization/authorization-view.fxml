@@ -44,10 +44,10 @@
                      prefHeight="37.0"
                      prefWidth="375.0" />
 
-      <Button onAction="#login"
+      <Button onAction="#authorization"
               prefHeight="37.0"
               prefWidth="375.0"
-              text="Войти">Log in</Button>
+              text="Войти"/>
 
       <Label alignment="CENTER"
              prefHeight="17.0"

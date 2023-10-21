@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newnrg.springjavafxclient.presentation.main.MainViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.newnrg.springjavafxclient.presentation.main.MainView">
    <children>
       <Button fx:id="openAuthorButton" layoutX="222.0" layoutY="174.0" mnemonicParsing="false" text="Авторизоваться" />
    </children>

@@ -1,6 +1,6 @@
 package com.newnrg.springjavafxclient.application;
 
-import com.newnrg.springjavafxclient.presentation.main.MainViewController;
+import com.newnrg.springjavafxclient.presentation.main.MainView;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -22,7 +22,7 @@ public class StageMainInitializer implements ApplicationListener<StageReadyEvent
     @Override
     public void onApplicationEvent(StageReadyEvent event) {
         Stage stage = event.stage;
-        Scene scene = new Scene(fxWeaver.loadView(MainViewController.class), 400, 300);
+        Scene scene = new Scene(fxWeaver.loadView(MainView.class), 400, 300);
         stage.setScene(scene);
         stage.setTitle("НОВАЯ ЭНЕРГИЯ");
         stage.getIcons().add(new Image("file:icon.png"));
