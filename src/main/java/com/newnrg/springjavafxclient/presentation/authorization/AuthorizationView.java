@@ -1,5 +1,6 @@
 package com.newnrg.springjavafxclient.presentation.authorization;
 
+import com.newnrg.springjavafxclient.presentation.model.AuthorizationService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -9,14 +10,18 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lombok.RequiredArgsConstructor;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
 @FxmlView("authorization-view.fxml")
+@RequiredArgsConstructor
 public class AuthorizationView implements AuthorizationContract.View {
 
-    private AuthorizationContract.Presenter presenter;
+    private final AuthorizationContract.Presenter presenter;
     @FXML
     private TextField loginText;
     @FXML
@@ -37,7 +42,6 @@ public class AuthorizationView implements AuthorizationContract.View {
 
     @FXML
     public void initialize() {
-        presenter = new AuthorizationContract.Presenter(this, new AuthorizationContract.Model());
         this.stage = new Stage();
         stage.setScene(new Scene(window));
         stage.setTitle("НОВАЯ ЭНЕРГИЯ");
